@@ -39,7 +39,7 @@ class JaegerTest extends TestCase
         $sampler = new ConstSampler();
         $scopeManager = new ScopeManager();
 
-        return new Jaeger('jaeger', $reporter, $sampler, $scopeManager);
+        return new Jaeger($reporter, $sampler, $scopeManager, 'jaeger');
     }
 
 
