@@ -108,6 +108,7 @@ class Span implements \OpenTracing\Span{
             'key' => $key,
             'value' => $value,
         ]);
+        $this->spanContext->withBaggageItem($key, $value);
     }
 
     /**
@@ -119,7 +120,7 @@ class Span implements \OpenTracing\Span{
     }
 
 
-    private function microtimeToInt(){
+    private function microtimeToInt(): int {
         return intval(microtime(true) * 1000000);
     }
 }
